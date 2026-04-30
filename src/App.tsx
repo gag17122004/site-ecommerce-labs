@@ -15,7 +15,8 @@ import {
 import { useState } from "react";
 
 const CTA_TEXT = "QUERO O ECOMMERCE LABS AGORA";
-const PRICE = "197,00"; // Placeholder price as per request
+const PRICE = "197,00"; 
+const CHECKOUT_URL = "https://pay.kiwify.com.br/X7e9Nln";
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,7 +35,7 @@ export default function App() {
             <a href="#problem" className="hover:text-emerald-500 transition-colors">O Desafio</a>
             <a href="#modules" className="hover:text-emerald-500 transition-colors">Ferramentas</a>
             <a href="#author" className="hover:text-emerald-500 transition-colors">Operador</a>
-            <a href="#pricing" className="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded font-bold transition-all glow-emerald">ACESSO AGORA</a>
+            <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-2.5 rounded font-bold transition-all glow-emerald">ACESSO AGORA</a>
           </div>
 
           <button className="md:hidden text-zinc-100" onClick={() => setIsMenuOpen(!isMenuOpen)}>
@@ -52,7 +53,7 @@ export default function App() {
             <a href="#problem" className="block text-zinc-100 font-bold" onClick={() => setIsMenuOpen(false)}>O Desafio</a>
             <a href="#modules" className="block text-zinc-100 font-bold" onClick={() => setIsMenuOpen(false)}>Ferramentas</a>
             <a href="#author" className="block text-zinc-100 font-bold" onClick={() => setIsMenuOpen(false)}>Operador</a>
-            <a href="#pricing" className="block w-full text-center bg-emerald-600 text-white py-4 rounded font-bold" onClick={() => setIsMenuOpen(false)}>ACESSAR LABS</a>
+            <a href={CHECKOUT_URL} target="_blank" rel="noopener noreferrer" className="block w-full text-center bg-emerald-600 text-white py-4 rounded font-bold" onClick={() => setIsMenuOpen(false)}>ACESSAR LABS</a>
           </motion.div>
         )}
       </nav>
@@ -81,7 +82,9 @@ export default function App() {
             </p>
             
             <a 
-              href="#pricing"
+              href={CHECKOUT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white px-8 md:px-12 py-5 md:py-6 rounded-lg font-display text-xl md:text-2xl font-bold transition-all glow-emerald-strong hover:scale-105 active:scale-95 group"
             >
               {CTA_TEXT}
@@ -292,9 +295,14 @@ export default function App() {
               <li className="flex items-center gap-3 text-zinc-300"><CheckCircle2 className="text-emerald-500" size={20} /> Kit 100% operacional pronto para uso</li>
             </ul>
 
-            <button className="w-full bg-emerald-600 hover:bg-emerald-500 text-white py-6 rounded-xl font-display text-2xl md:text-3xl font-bold transition-all glow-emerald-strong hover:scale-[1.02] active:scale-95 mb-6 uppercase">
+            <a 
+              href={CHECKOUT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full text-center bg-emerald-600 hover:bg-emerald-500 text-white py-6 rounded-xl font-display text-2xl md:text-3xl font-bold transition-all glow-emerald-strong hover:scale-[1.02] active:scale-95 mb-6 uppercase"
+            >
               {CTA_TEXT}
-            </button>
+            </a>
             
             <p className="text-zinc-500 text-sm">
               Uma venda certa paga o investimento.
@@ -388,7 +396,9 @@ export default function App() {
           </p>
           
           <a 
-            href="#pricing"
+            href={CHECKOUT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-zinc-100 hover:bg-emerald-500 text-zinc-950 hover:text-white px-10 py-6 rounded-lg font-display text-2xl font-bold transition-all glow-emerald group"
           >
             QUERO ACESSO AGORA — R$ {PRICE}
